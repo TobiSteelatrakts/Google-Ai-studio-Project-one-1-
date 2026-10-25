@@ -1,0 +1,296 @@
+<div class="min-h-screen bg-stone-50 text-stone-900 flex flex-col font-sans antialiased selection:bg-emerald-600 selection:text-white">
+  
+  <!-- Navigation Bar -->
+  <app-navbar></app-navbar>
+
+  <!-- Hero Section with Visual Carrier & Floating Smart Search -->
+  <app-hero></app-hero>
+
+  <!-- Filter & View Switcher Toolbar -->
+  <app-filter-bar></app-filter-bar>
+
+  <!-- Main Listings Display Area -->
+  <main id="featured-estates" class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    
+    <!-- Empty State -->
+    @if (propertyService.filteredProperties().length === 0) {
+      <div class="text-center py-20 p-8 rounded-3xl bg-white border border-stone-200 shadow-xs space-y-4 max-w-lg mx-auto">
+        <div class="w-16 h-16 rounded-full bg-stone-100 text-stone-400 flex items-center justify-center mx-auto">
+          <mat-icon class="text-3xl">search_off</mat-icon>
+        </div>
+        <div class="space-y-1">
+          <h3 class="font-serif-display text-xl font-semibold text-stone-800">No matching residences found</h3>
+          <p class="text-xs text-stone-500">
+            Try adjusting your search criteria, price range bracket, or selected amenities.
+          </p>
+        </div>
+        <button
+          type="button"
+          (click)="resetAllFilters()"
+          class="px-5 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs rounded-xl shadow-xs transition-colors cursor-pointer"
+        >
+          Reset All Filters
+        </button>
+      </div>
+    } @else {
+
+      <!-- VIEW MODE 1: Standard Responsive Grid View -->
+      @if (propertyService.viewMode() === 'grid') {
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          @for (prop of propertyService.filteredProperties(); track prop.id) {
+            <app-property-card [property]="prop"></app-property-card>
+          }
+        </div>
+      }
+
+      <!-- VIEW MODE 2: Split View (Listings Left, Sticky Interactive Map Right) -->
+      @if (propertyService.viewMode() === 'split') {
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Listings Column -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-6">
+            @for (prop of propertyService.filteredProperties(); track prop.id) {
+              <app-property-card [property]="prop"></app-property-card>
+            }
+          </div>
+
+          <!-- Right Sticky Map Column -->
+          <div class="hidden lg:block lg:col-span-5 sticky top-24">
+            <app-interactive-map></app-interactive-map>
+          </div>
+
+        </div>
+      }
+
+      <!-- VIEW MODE 3: Full Map View -->
+      @if (propertyService.viewMode() === 'map') {
+        <div class="space-y-6">
+          <app-interactive-map></app-interactive-map>
+
+          <!-- Horizontal scrolling property showcase row underneath map -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-serif-display text-lg font-semibold text-stone-900">
+                Mapped Estates ({{ propertyService.filteredProperties().length }})
+              </h3>
+              <span class="text-xs text-stone-500">Hover pin or card to synchronize perspective</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              @for (prop of propertyService.filteredProperties(); track prop.id) {
+                <app-property-card [property]="prop"></app-property-card>
+              }
+            </div>
+          </div>
+        </div>
+      }
+
+    }
+
+  </main>
+
+  <!-- Architectural Provenance & Visual Proof Bento Section -->
+  <section class="py-16 sm:py-24 bg-white border-t border-stone-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Section Kicker & Header -->
+      <div class="max-w-3xl space-y-3">
+        <div class="flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-emerald-800">
+          <span>The Verdant Curation Standard</span>
+          <span aria-hidden="true">·</span>
+          <span>Architectural Integrity</span>
+        </div>
+        <h2 class="font-serif-display text-2xl sm:text-3xl md:text-4xl font-semibold text-stone-900 tracking-tight leading-tight">
+          Every residence vetted for architectural significance, natural light, and structural permanence.
+        </h2>
+        <p class="text-sm sm:text-base text-stone-600 leading-relaxed font-normal">
+          We reject ordinary tract developments in favor of custom-commissioned modernist dwellings that harmonize with the California coastline and celebrate honest materials.
+        </p>
+      </div>
+
+      <!-- Asymmetric Bento Showcase Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- Bento Card 1: Large Interior Architecture Spotlight (7 cols) -->
+        <div class="lg:col-span-7 bg-stone-50 rounded-3xl overflow-hidden border border-stone-200/80 flex flex-col justify-between group shadow-xs">
+          <div class="relative aspect-16/10 w-full overflow-hidden bg-stone-200">
+            <img
+              src="/images/villa_living_room_1792939739632.jpg"
+              alt="Architectural interior living salon with travertine fireplace and double height ceilings"
+              class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+              referrerpolicy="no-referrer"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] font-semibold uppercase tracking-widest text-emerald-400 block mb-1">
+                Passive Solar Orientation
+              </span>
+              <h3 class="font-serif-display text-xl sm:text-2xl font-semibold text-white">
+                Travertine thermal mass &amp; natural cross-ventilation
+              </h3>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+              Engineered with double-height volume to promote natural thermal buoyancy. Floor-to-ceiling motorized pocketing glazing erases the boundary between interior sanctuaries and lush native landscaping.
+            </p>
+            <div class="flex items-center gap-4 text-xs font-semibold text-stone-900 pt-2">
+              <span class="flex items-center gap-1 text-emerald-800">
+                <mat-icon class="text-sm">eco</mat-icon>
+                <span>Zero-VOC Finishes</span>
+              </span>
+              <span aria-hidden="true" class="text-stone-300">·</span>
+              <span class="flex items-center gap-1 text-emerald-800">
+                <mat-icon class="text-sm">energy_savings_leaf</mat-icon>
+                <span>Triple-Pane Low-E Glass</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Coastal Terrace & Plunge Pool (5 cols) -->
+        <div class="lg:col-span-5 bg-stone-50 rounded-3xl overflow-hidden border border-stone-200/80 flex flex-col justify-between group shadow-xs">
+          <div class="relative aspect-4/3 w-full overflow-hidden bg-stone-200">
+            <img
+              src="/images/penthouse_terrace_1792939740144.jpg"
+              alt="Coastal penthouse teak terrace with private plunge pool overlooking city and bay at golden hour"
+              class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+              referrerpolicy="no-referrer"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4 text-white">
+              <span class="text-[10px] font-semibold uppercase tracking-widest text-emerald-400 block mb-1">
+                Outdoor Living Architecture
+              </span>
+              <h3 class="font-serif-display text-lg sm:text-xl font-semibold text-white">
+                Cantilevered plunge pools &amp; horizon terraces
+              </h3>
+            </div>
+          </div>
+          <div class="p-6 space-y-2">
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal">
+              Private outdoor sun decks engineered with marine-grade teak decking, integrated solar heating, and frameless glass balustrades offering unbroken 360-degree ocean views.
+            </p>
+            <div class="pt-2">
+              <button
+                type="button"
+                (click)="openScheduleTour()"
+                class="text-xs font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1 cursor-pointer transition-colors"
+              >
+                <span>Explore Available Penthouses &amp; Villas &rarr;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Editorial Numbered Pillars (Human Editorial Numbering, No Code Comments) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6 border-t border-stone-200">
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-stone-900">01. Verified Provenance &amp; Title</h4>
+          <p class="text-xs text-stone-600 leading-relaxed font-normal">
+            Every estate undergoes an exhaustive 45-point architectural inspection, geotechnical slope stability verification, and independent title insurance audit.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-stone-900">02. Private VIP Viewing Protocol</h4>
+          <p class="text-xs text-stone-600 leading-relaxed font-normal">
+            Enjoy discreet private viewings escorted by a licensed partner agent. Option for remote clients to experience ultra-high-definition interactive walkthroughs.
+          </p>
+        </div>
+        <div class="space-y-2">
+          <h4 class="text-sm font-bold text-stone-900">03. Tailored Financing Advisory</h4>
+          <p class="text-xs text-stone-600 leading-relaxed font-normal">
+            Direct access to private wealth banking partners offering specialized jumbo lending structures, interest-only options, and bridge capital solutions.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Integrated Mortgage Planner Banner CTA Strip -->
+  <section class="bg-stone-900 text-white py-12 sm:py-16 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-r from-emerald-950/80 via-stone-900 to-stone-950 p-6 sm:p-10 rounded-3xl border border-emerald-900/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="space-y-2 max-w-xl text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-400">
+            <mat-icon class="text-sm">calculate</mat-icon>
+            <span>Integrated Financial Planning</span>
+          </div>
+          <h3 class="font-serif-display text-2xl sm:text-3xl font-semibold text-white">
+            Calculate your monthly carry, tax benefits &amp; down payment options.
+          </h3>
+          <p class="text-xs sm:text-sm text-stone-300 leading-relaxed font-normal">
+            Adjust loan terms, interest rates, property tax brackets, and HOA expenses dynamically to model your investment with absolute clarity.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
+          <button
+            type="button"
+            (click)="openMortgageCalculator()"
+            class="w-full sm:w-auto px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm rounded-xl shadow-lg hover:shadow-emerald-900/40 transition-all cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
+          >
+            <mat-icon class="text-base">tune</mat-icon>
+            <span>Launch Mortgage Calculator</span>
+          </button>
+
+          <button
+            type="button"
+            (click)="openScheduleTour()"
+            class="w-full sm:w-auto px-5 py-3.5 bg-stone-800 hover:bg-stone-700 text-stone-200 font-semibold text-xs sm:text-sm rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
+          >
+            <mat-icon class="text-base text-emerald-400">calendar_month</mat-icon>
+            <span>Schedule Tour</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Private Advisors Section -->
+  <app-advisors-section></app-advisors-section>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+
+  <!-- Modals & Overlays -->
+  <app-property-details-modal></app-property-details-modal>
+  <app-lightbox-modal></app-lightbox-modal>
+  <app-schedule-tour-modal></app-schedule-tour-modal>
+  <app-agent-contact-modal></app-agent-contact-modal>
+  <app-mortgage-calculator-modal></app-mortgage-calculator-modal>
+  <app-saved-drawer></app-saved-drawer>
+
+  <!-- Mobile Floating Quick-Toggle Bottom Bar -->
+  @if (!propertyService.isAnyModalOpen()) {
+    <div class="md:hidden fixed bottom-4 inset-x-4 z-40 flex items-center justify-between gap-2 p-2 bg-stone-950/95 backdrop-blur-md rounded-2xl border border-stone-800 shadow-2xl text-white animate-fadeIn">
+      <!-- View Switcher -->
+      <button
+        type="button"
+        (click)="toggleMobileView()"
+        class="flex-1 py-2 px-3 rounded-xl bg-stone-800/90 hover:bg-stone-700 text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
+      >
+        <mat-icon class="text-sm text-emerald-400">
+          {{ propertyService.viewMode() === 'map' ? 'grid_view' : 'map' }}
+        </mat-icon>
+        <span>{{ propertyService.viewMode() === 'map' ? 'View Grid' : 'View Map' }}</span>
+      </button>
+
+      <!-- Schedule Tour CTA -->
+      <button
+        type="button"
+        (click)="openScheduleTour()"
+        class="flex-1 py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer transition-colors shadow-sm"
+      >
+        <mat-icon class="text-sm">calendar_month</mat-icon>
+        <span>Book Tour</span>
+      </button>
+    </div>
+  }
+
+</div>

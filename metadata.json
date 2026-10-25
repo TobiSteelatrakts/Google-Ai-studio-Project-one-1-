@@ -1,0 +1,6 @@
+{
+  "name": "Verdant Luxury Real Estate",
+  "description": "Modern luxury real estate marketplace with interactive map views, property galleries, scheduling viewing tours, agent contacts, and integrated mortgage calculators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
