@@ -282,7 +282,7 @@ export class AgentContactModal {
   handleImageError(event: Event): void {
     const target = event.target as HTMLImageElement;
     if (target && !target.src.includes('agent_portrait')) {
-      target.src = '/images/agent_portrait_1792939740440.jpg';
+      target.src = '/images/agent_portrait_1792939740440.webp';
     }
   }
 

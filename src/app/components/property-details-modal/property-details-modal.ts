@@ -399,7 +399,7 @@ export class PropertyDetailsModal {
   handleImageError(event: Event): void {
     const target = event.target as HTMLImageElement;
     if (target && !target.src.includes('hero_modern_villa')) {
-      target.src = '/images/hero_modern_villa_1792939739344.jpg';
+      target.src = '/images/hero_modern_villa_1792939739344.webp';
     }
   }
 

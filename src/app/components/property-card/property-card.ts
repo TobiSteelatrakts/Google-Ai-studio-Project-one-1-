@@ -3,10 +3,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { Property } from '../../models/property.model';
 import { PropertyService } from '../../services/property.service';
 
+import { LazyImgDirective } from '../../directives/lazy-img.directive';
+
 @Component({
   selector: 'app-property-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIconModule],
+  imports: [MatIconModule, LazyImgDirective],
   template: `
     <article
       (mouseenter)="onCardHover(true)"
@@ -16,7 +18,7 @@ import { PropertyService } from '../../services/property.service';
       [class.ring-emerald-600]="isMapHighlighted()"
     >
       <!-- Media Gallery Container (4:3 aspect ratio) -->
-      <div class="relative aspect-4/3 w-full bg-stone-100 overflow-hidden select-none">
+      <div class="relative aspect-4/3 w-full bg-stone-200 overflow-hidden select-none">
         <!-- Main Image button -->
         <button
           type="button"
@@ -25,13 +27,10 @@ import { PropertyService } from '../../services/property.service';
           [attr.aria-label]="'View details for ' + property().title"
         >
           <img
-            [src]="currentImage().url"
+            [appLazySrc]="currentImage().url"
             [alt]="property().title + ' - ' + currentImage().caption"
             class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500 ease-out"
-            loading="lazy"
-            decoding="async"
             referrerpolicy="no-referrer"
-            (error)="handleImageError($event)"
           />
         </button>
 
@@ -221,7 +220,7 @@ export class PropertyCard {
   handleImageError(event: Event): void {
     const target = event.target as HTMLImageElement;
     if (target && !target.src.includes('hero_modern_villa')) {
-      target.src = '/images/hero_modern_villa_1792939739344.jpg';
+      target.src = '/images/hero_modern_villa_1792939739344.webp';
     }
   }
 

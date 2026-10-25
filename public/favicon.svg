@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded Architectural Monogram Background -->
+  <defs>
+    <linearGradient id="verdantBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c22" />
+      <stop offset="50%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+    <linearGradient id="goldAcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="emeraldGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Base with Subtle Border -->
+  <rect width="64" height="64" rx="16" fill="url(#verdantBg)" />
+  <rect x="1" y="1" width="62" height="62" rx="15" stroke="#10b981" stroke-opacity="0.3" stroke-width="1.5" />
+
+  <!-- Modernist Architectural Roofline Cantilever (Verdant Horizon) -->
+  <path d="M12 24 L32 14 L52 24" stroke="url(#emeraldGlow)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Architectural Modernist 'V' Monogram Structure -->
+  <path d="M19 23 L32 47 L45 23" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Internal Cantilever Support & Light Column -->
+  <path d="M26 23 L32 37 L38 23" stroke="url(#emeraldGlow)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Gold Hearth / Geometric Diamond Accent -->
+  <polygon points="32,23 35,27 32,31 29,27" fill="url(#goldAcc)" />
+
+  <!-- Grounding Coastal Horizon Line -->
+  <line x1="22" y1="52" x2="42" y2="52" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-opacity="0.8" />
+</svg>

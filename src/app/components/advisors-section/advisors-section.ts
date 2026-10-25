@@ -4,10 +4,12 @@ import { PRIMARY_AGENT, SECONDARY_AGENT } from '../../data/properties.data';
 import { PropertyAgent } from '../../models/property.model';
 import { PropertyService } from '../../services/property.service';
 
+import { LazyImgDirective } from '../../directives/lazy-img.directive';
+
 @Component({
   selector: 'app-advisors-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [MatIconModule],
+  imports: [MatIconModule, LazyImgDirective],
   template: `
     <section id="advisors-section" class="py-16 sm:py-20 bg-stone-900 text-white border-t border-stone-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,13 +36,11 @@ import { PropertyService } from '../../services/property.service';
           @for (advisor of advisors; track advisor.id) {
             <div class="p-6 rounded-3xl bg-stone-950/80 border border-stone-800 flex flex-col sm:flex-row items-center sm:items-start gap-6 hover:border-emerald-600/40 transition-all">
               <img
-                [src]="advisor.avatar"
+                [appLazySrc]="advisor.avatar"
+                [fallbackSrc]="'/images/agent_portrait_1792939740440.webp'"
                 [alt]="advisor.name"
-                class="w-24 h-24 rounded-2xl object-cover border-2 border-emerald-600 shrink-0 shadow-md"
-                loading="lazy"
-                decoding="async"
+                class="w-24 h-24 rounded-2xl object-cover border-2 border-emerald-600 shrink-0 shadow-md bg-stone-800"
                 referrerpolicy="no-referrer"
-                (error)="handleImageError($event)"
               />
               <div class="flex-1 text-center sm:text-left space-y-2">
                 <div>
@@ -105,7 +105,7 @@ export class AdvisorsSection {
   handleImageError(event: Event): void {
     const target = event.target as HTMLImageElement;
     if (target && !target.src.includes('agent_portrait')) {
-      target.src = '/images/agent_portrait_1792939740440.jpg';
+      target.src = '/images/agent_portrait_1792939740440.webp';
     }
   }
 

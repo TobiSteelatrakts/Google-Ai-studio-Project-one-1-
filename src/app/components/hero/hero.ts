@@ -12,7 +12,7 @@ import { PropertyService } from '../../services/property.service';
       <!-- Background 16:9 Focal Image with Measured Scrim -->
       <div class="absolute inset-0 z-0">
         <img
-          src="/images/hero_modern_villa_1792939739344.jpg"
+          src="/images/hero_modern_villa_1792939739344.webp"
           alt="Modern luxury architectural villa with floor-to-ceiling glass and illuminated reflection pool at dusk"
           class="w-full h-full object-cover object-center filter brightness-[0.88]"
           loading="eager"

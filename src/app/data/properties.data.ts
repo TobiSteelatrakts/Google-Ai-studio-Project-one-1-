@@ -7,7 +7,7 @@ export const PRIMARY_AGENT: PropertyAgent = {
   phone: '+1 (310) 892-4410',
   email: 'm.sterling@verdantestates.com',
   license: 'DRE #01928471',
-  avatar: '/images/agent_portrait_1792939740440.jpg',
+  avatar: '/images/agent_portrait_1792939740440.webp',
   rating: 4.98,
   experienceYears: 16,
   totalDeals: 142,
@@ -21,7 +21,7 @@ export const SECONDARY_AGENT: PropertyAgent = {
   phone: '+1 (310) 745-9920',
   email: 'e.rostova@verdantestates.com',
   license: 'DRE #02148930',
-  avatar: '/images/agent_portrait_1792939740440.jpg',
+  avatar: '/images/agent_portrait_1792939740440.webp',
   rating: 4.95,
   experienceYears: 12,
   totalDeals: 98,
@@ -86,17 +86,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Designed with passive solar orientation and natural coastal cross-ventilation. Structural cantilevers eliminate corner columns, allowing unbroken 270-degree horizons.',
     images: [
       {
-        url: '/images/hero_modern_villa_1792939739344.jpg',
+        url: '/images/hero_modern_villa_1792939739344.webp',
         caption: 'Exterior facade at dusk with lit infinity pool and architectural glazing',
         tag: 'Exterior'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Double-height great room with floor-to-ceiling travertine fireplace',
         tag: 'Living Space'
       },
       {
-        url: '/images/penthouse_terrace_1792939740144.jpg',
+        url: '/images/penthouse_terrace_1792939740144.webp',
         caption: 'Cantilevered terrace with plunge pool and panoramic coastal vistas',
         tag: 'Terrace & Pool'
       }
@@ -174,17 +174,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Engineered rooftop terrace with load-bearing plunge pool and perimeter frameless glass balustrades to maximize horizon exposure without wind disruption.',
     images: [
       {
-        url: '/images/penthouse_terrace_1792939740144.jpg',
+        url: '/images/penthouse_terrace_1792939740144.webp',
         caption: 'Private sunset terrace with plunge pool and panoramic coastal vistas',
         tag: 'Terrace'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Sun-drenched salon with custom oak millwork and garden perspective',
         tag: 'Living Space'
       },
       {
-        url: '/images/coastal_bluff_estate_1792940942729.jpg',
+        url: '/images/coastal_bluff_estate_1792940942729.webp',
         caption: 'Harbor overview and evening coastal light',
         tag: 'Overview'
       }
@@ -256,17 +256,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Passive cooling courtyard architecture creates a gentle thermal chimney effect, maintaining pristine comfort without heavy HVAC consumption.',
     images: [
       {
-        url: '/images/modernist_atrium_1792940943369.jpg',
+        url: '/images/modernist_atrium_1792940943369.webp',
         caption: 'Central open-air olive tree atrium and travertine reflecting pool',
         tag: 'Courtyard Atrium'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Double-height living pavilion with floor-to-ceiling travertine chimney',
         tag: 'Living Space'
       },
       {
-        url: '/images/hero_modern_villa_1792939739344.jpg',
+        url: '/images/hero_modern_villa_1792939739344.webp',
         caption: 'Evening perspective of the cantilevered glass wings and terrace',
         tag: 'Exterior'
       }
@@ -343,17 +343,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Constructed with marine-grade bronze, cast-in-place board-formed concrete, and weathering cedar to age gracefully in the sea mist.',
     images: [
       {
-        url: '/images/coastal_bluff_estate_1792940942729.jpg',
+        url: '/images/coastal_bluff_estate_1792940942729.webp',
         caption: 'Blufftop residence overlooking the ocean waves and coastline at sunset',
         tag: 'Bluff Estate'
       },
       {
-        url: '/images/penthouse_terrace_1792939740144.jpg',
+        url: '/images/penthouse_terrace_1792939740144.webp',
         caption: 'Oceanfront sun deck with private pool and panoramic horizon',
         tag: 'Deck'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Expansive indoor-outdoor salon opening to the garden terraces',
         tag: 'Living Space'
       }
@@ -431,17 +431,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Original 1920s reinforced concrete framework paired with contemporary thermally broken custom steel sash windows.',
     images: [
       {
-        url: '/images/industrial_arts_loft_1792940944589.jpg',
+        url: '/images/industrial_arts_loft_1792940944589.webp',
         caption: 'High-ceiling industrial loft with black steel mullions and concrete finishes',
         tag: 'Loft Interior'
       },
       {
-        url: '/images/penthouse_terrace_1792939740144.jpg',
+        url: '/images/penthouse_terrace_1792939740144.webp',
         caption: 'Planted rooftop terrace with downtown skyline panorama',
         tag: 'Rooftop'
       },
       {
-        url: '/images/hero_modern_villa_1792939739344.jpg',
+        url: '/images/hero_modern_villa_1792939739344.webp',
         caption: 'Nighttime exterior perspective through floor-to-ceiling industrial glass',
         tag: 'Atmosphere'
       }
@@ -518,17 +518,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Timber frame sustainably sourced with FSC-certified cedar and zero-VOC mineral silicate paint finishes throughout.',
     images: [
       {
-        url: '/images/nordic_scandinavian_villa_1792940944628.jpg',
+        url: '/images/nordic_scandinavian_villa_1792940944628.webp',
         caption: 'Scandinavian timber villa enveloped in old-growth pine trees at twilight',
         tag: 'Facade'
       },
       {
-        url: '/images/modernist_atrium_1792940943369.jpg',
+        url: '/images/modernist_atrium_1792940943369.webp',
         caption: 'Minimalist courtyard opening to private natural garden',
         tag: 'Courtyard'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Minimalist living area with custom oak cabinetry and fireplace',
         tag: 'Living Space'
       }
@@ -599,17 +599,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Low-slung single-story profile respects coastal view sheds while preserving every native coastal tree on the 0.7-acre parcel.',
     images: [
       {
-        url: '/images/nordic_scandinavian_villa_1792940944628.jpg',
+        url: '/images/nordic_scandinavian_villa_1792940944628.webp',
         caption: 'Low-slung forest sanctuary illuminated among towering pines',
         tag: 'Exterior'
       },
       {
-        url: '/images/villa_living_room_1792939739632.jpg',
+        url: '/images/villa_living_room_1792939739632.webp',
         caption: 'Living room with floor-to-ceiling forest glass and travertine fireplace',
         tag: 'Living Space'
       },
       {
-        url: '/images/modernist_atrium_1792940943369.jpg',
+        url: '/images/modernist_atrium_1792940943369.webp',
         caption: 'Travertine reflecting pool and courtyard terrace',
         tag: 'Patio'
       }
@@ -680,17 +680,17 @@ export const PROPERTIES_DATA: Property[] = [
     architecturalNotes: 'Deep cantilevered roof planes provide natural shading during zenith sun while framing endless Southern California horizons.',
     images: [
       {
-        url: '/images/hero_modern_villa_1792939739344.jpg',
+        url: '/images/hero_modern_villa_1792939739344.webp',
         caption: 'Promontory dusk perspective with 100ft lit infinity reflection pool',
         tag: 'Estate View'
       },
       {
-        url: '/images/coastal_bluff_estate_1792940942729.jpg',
+        url: '/images/coastal_bluff_estate_1792940942729.webp',
         caption: 'Cantilevered promontory decks overlooking city-to-sea horizons',
         tag: 'Sky Terrace'
       },
       {
-        url: '/images/industrial_arts_loft_1792940944589.jpg',
+        url: '/images/industrial_arts_loft_1792940944589.webp',
         caption: 'Grand reception salon with double-height volume and luxury fixtures',
         tag: 'Reception Salon'
       }

@@ -13,6 +13,7 @@ import { PropertyCard } from './components/property-card/property-card';
 import { PropertyDetailsModal } from './components/property-details-modal/property-details-modal';
 import { SavedDrawer } from './components/saved-drawer/saved-drawer';
 import { ScheduleTourModal } from './components/schedule-tour-modal/schedule-tour-modal';
+import { LazyImgDirective } from './directives/lazy-img.directive';
 import { PropertyService } from './services/property.service';
 
 @Component({
@@ -32,7 +33,8 @@ import { PropertyService } from './services/property.service';
     MortgageCalculatorModal,
     SavedDrawer,
     AdvisorsSection,
-    Footer
+    Footer,
+    LazyImgDirective
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
