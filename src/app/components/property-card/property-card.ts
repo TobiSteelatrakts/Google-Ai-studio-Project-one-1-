@@ -28,6 +28,8 @@ import { PropertyService } from '../../services/property.service';
             [src]="currentImage().url"
             [alt]="property().title + ' - ' + currentImage().caption"
             class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500 ease-out"
+            loading="lazy"
+            decoding="async"
             referrerpolicy="no-referrer"
             (error)="handleImageError($event)"
           />

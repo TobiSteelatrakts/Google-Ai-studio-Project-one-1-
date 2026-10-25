@@ -119,6 +119,8 @@ interface CalendarDay {
                   [src]="prop.images[0].url"
                   [alt]="prop.title"
                   class="w-16 h-14 object-cover rounded-xl"
+                  loading="lazy"
+                  decoding="async"
                   referrerpolicy="no-referrer"
                   (error)="handleImageError($event)"
                 />

@@ -66,6 +66,8 @@ import { PropertyService } from '../../services/property.service';
                     [src]="activeGalleryImage().url"
                     [alt]="prop.title + ' - ' + activeGalleryImage().caption"
                     class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    decoding="async"
                     referrerpolicy="no-referrer"
                     (error)="handleImageError($event)"
                   />
@@ -121,6 +123,8 @@ import { PropertyService } from '../../services/property.service';
                       [src]="img.url"
                       [alt]="img.caption"
                       class="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                       referrerpolicy="no-referrer"
                       (error)="handleImageError($event)"
                     />
@@ -314,6 +318,8 @@ import { PropertyService } from '../../services/property.service';
                   [src]="prop.agent.avatar"
                   [alt]="prop.agent.name"
                   class="w-16 h-16 rounded-full object-cover border-2 border-emerald-600 shadow-sm"
+                  loading="lazy"
+                  decoding="async"
                   referrerpolicy="no-referrer"
                 />
                 <div>

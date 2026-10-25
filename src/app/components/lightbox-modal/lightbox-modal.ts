@@ -54,6 +54,7 @@ import { PropertyService } from '../../services/property.service';
             [src]="currentImage().url"
             [alt]="currentImage().caption"
             class="max-h-[75vh] max-w-[90vw] object-contain rounded-lg shadow-2xl transition-all duration-300 pointer-events-auto"
+            decoding="async"
             referrerpolicy="no-referrer"
             (error)="handleImageError($event)"
           />
@@ -91,7 +92,7 @@ import { PropertyService } from '../../services/property.service';
               [class.opacity-50]="lightbox().currentIndex !== i"
               [attr.aria-label]="'View image ' + (i + 1)"
             >
-              <img [src]="img.url" [alt]="img.caption" class="w-full h-full object-cover" referrerpolicy="no-referrer" />
+              <img [src]="img.url" [alt]="img.caption" class="w-full h-full object-cover" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
             </button>
           }
         </div>

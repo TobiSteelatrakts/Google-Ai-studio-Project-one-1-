@@ -287,6 +287,8 @@ type MapTheme = 'architectural' | 'satellite' | 'topographic';
                 [src]="active.images[0].url"
                 [alt]="active.title"
                 class="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
                 referrerpolicy="no-referrer"
                 (error)="handleImageError($event)"
               />

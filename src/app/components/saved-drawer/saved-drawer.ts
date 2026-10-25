@@ -68,6 +68,8 @@ import { PropertyService } from '../../services/property.service';
                         [src]="prop.images[0].url"
                         [alt]="prop.title"
                         class="w-full h-full object-cover"
+                        loading="lazy"
+                        decoding="async"
                         referrerpolicy="no-referrer"
                         (error)="handleImageError($event)"
                       />

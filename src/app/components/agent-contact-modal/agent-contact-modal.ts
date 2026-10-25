@@ -68,6 +68,8 @@ import { PropertyService } from '../../services/property.service';
                   [src]="modalState().agent.avatar"
                   [alt]="modalState().agent.name"
                   class="w-16 h-16 rounded-full object-cover border-2 border-emerald-600 shadow-xs"
+                  loading="lazy"
+                  decoding="async"
                   referrerpolicy="no-referrer"
                   (error)="handleImageError($event)"
                 />

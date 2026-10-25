@@ -15,6 +15,9 @@ import { PropertyService } from '../../services/property.service';
           src="/images/hero_modern_villa_1792939739344.jpg"
           alt="Modern luxury architectural villa with floor-to-ceiling glass and illuminated reflection pool at dusk"
           class="w-full h-full object-cover object-center filter brightness-[0.88]"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           referrerpolicy="no-referrer"
         />
         <!-- Measured Scrim for contrast -->

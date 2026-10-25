@@ -37,6 +37,8 @@ import { PropertyService } from '../../services/property.service';
                 [src]="advisor.avatar"
                 [alt]="advisor.name"
                 class="w-24 h-24 rounded-2xl object-cover border-2 border-emerald-600 shrink-0 shadow-md"
+                loading="lazy"
+                decoding="async"
                 referrerpolicy="no-referrer"
                 (error)="handleImageError($event)"
               />
